@@ -1,4 +1,4 @@
-/* Reset and Base Styles */
+/* ====== Reset Styles ====== */
 * {
   margin: 0;
   padding: 0;
@@ -6,108 +6,140 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-  color: #fff;
-  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* ====== Header Styling ====== */
+.site-header {
+  background-color: #1a1a1a;  /* Dark background */
+  color: white;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.site-header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
 }
 
-/* Hero Section */
+.site-header .logo {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.site-header .nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.site-header .nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.site-header .nav a:hover {
+  color: #ff9800; /* Accent color on hover */
+}
+
+/* ====== Night/Day Mode Button ====== */
+#modeToggle {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#modeToggle:hover {
+  background-color: #555;
+}
+
+/* ====== Hero Section (Profile Section) ====== */
 .hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;  /* Full screen height */
+  background-color: #f0f0f0;
+  flex-direction: column;
   text-align: center;
-  max-width: 800px;
-  padding: 20px;
-  animation: fadeIn 1.2s ease-out forwards;
-  opacity: 0;
 }
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .image-container {
   margin-bottom: 20px;
-  animation: scaleIn 1s ease-in-out;
-}
-
-@keyframes scaleIn {
-  from {
-    transform: scale(0.6);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
 }
 
 .profile-img {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: 4px solid #fff;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
-}
-
-.profile-img:hover {
-  transform: scale(1.05);
+  object-fit: cover;
 }
 
 .name {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  background: linear-gradient(to right, #00c6ff, #0072ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size: 36px;
+  margin: 10px 0;
 }
 
 .intro {
-  font-size: 1.2rem;
+  font-size: 18px;
   margin-bottom: 20px;
-  line-height: 1.5;
 }
 
-/* Button */
 .cta-button {
-  padding: 12px 24px;
-  background: #00c6ff;
+  background-color: #1a1a1a;
+  color: white;
+  padding: 12px 20px;
   border: none;
-  border-radius: 30px;
-  font-size: 1rem;
-  color: #fff;
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
-  box-shadow: 0 4px 15px rgba(0, 198, 255, 0.3);
+  border-radius: 5px;
+  font-size: 16px;
 }
 
 .cta-button:hover {
-  background: #0072ff;
-  transform: translateY(-3px);
+  background-color: #333;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-  .name {
-    font-size: 2rem;
-  }
+/* ====== Dark Mode Styling ====== */
+body.dark-mode {
+  background-color: #121212;
+  color: #fff;
+}
 
-  .intro {
-    font-size: 1rem;
-  }
+body.dark-mode .site-header {
+  background-color: #333;
+}
 
-  .profile-img {
-    width: 120px;
-    height: 120px;
-  }
+body.dark-mode .hero {
+  background-color: #1a1a1a;
+}
+
+body.dark-mode .hero-content {
+  color: #fff;
+}
+
+body.dark-mode .cta-button {
+  background-color: #ff9800;
 }
