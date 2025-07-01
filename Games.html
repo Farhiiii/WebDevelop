@@ -2,20 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Farhan's Portfolio - Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tic Tac Toe</title>
   <link rel="stylesheet" href="games.css" />
 </head>
 <body>
-
   <!-- Header Section -->
   <header class="site-header">
     <div class="container">
       <h2 class="logo">Farhan's Portfolio</h2>
       <nav class="nav">
         <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="Games.html">Games</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Games.html" class="active">Games</a></li>
           <li><a href="About.html">About</a></li>
           <li><a href="Contact.html">Contact</a></li>
         </ul>
@@ -23,16 +22,15 @@
       <button id="modeToggle">Night Mode</button>
     </div>
   </header>
-
   <main>
-    <h1 class="neon">Welcome to My Portfolio</h1>
-    <p class="intro">
-      Hey there! This is Farhan's Portfolio homepage.<br />
-      Use the navigation above to explore games, learn about me, or get in touch.
-    </p>
-
+    <h1 class="neon">Tic Tac Toe</h1>
+    <div class="status" id="status">Turn: X</div>
+    <div class="board" id="board"></div>
+    <div class="button-container">
+      <button class="restart-btn" onclick="restartGame()">Restart Game</button>
+    </div>
   </main>
-
+  
   <script src="games.js"></script>
 </body>
 </html>
